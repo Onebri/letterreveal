@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Reveal</title>
+    <style>
+        body {
+            font-family: 'Garnett', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #eebacb;
+        }
+        #timer {
+            background-color: #0f57db;
+            color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        #link {
+            display: none;
+            text-align: center;  /* Center-align content within this div */
+        }
+        a {
+            display: block; 
+            background-color: #2ecc71;
+            color: #fff;
+            padding: 20px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            margin-bottom: 20px;
+        }
+        a:hover {
+            background-color: #27ae60;
+        }
+        h1, h2 {
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 400px; /* Adjust as per your preference */
+            border-radius: 5px;
+            margin-bottom: 10px;
+            margin-top: 10px; /* Space between the button and the image */
+        }
+    </style>
+</head>
+<body>
+    <h1>Salut Chris Pasquier</h1>
+    <h2>Chaud pour un peu de lecture ma gueule??</h2>
+    
+    <div id="timer">The link will be revealed in <span id="time-left">9</span> seconds.</div>
+    <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGR4cGk4enVzcGEyOHg0YzlqNHpzbWRpeG40MXBpOXZocmUxaWNweiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/BoHCeLmEKytt7oFxyR/giphy.gif" alt="What the f*** reaction" id="reaction-gif">
+    <div id="link">
+        <a href="https://slite.slite.com/app/docs/6ovNQdY71Dg020/Letter-for-Chris">Tout commence ici, suis moi!</a>
+        <img src="https://lh3.googleusercontent.com/pw/ADCreHc1Agh0_kCZU9J93RJ6N75e27IB7Y0lKE6snPWqWXEk9A7aq2oy2kXey0oBX43CKIrDV6_G4A7wJCV8ubR1UCYR_Ef-stpvJrQc15sXvE1xLrB6hHbp1YyZT2WdWmbLlw7MSk2JYjArwXjXqOs3Z4Jusg=w1146-h1528-s-no?authuser=0" alt="Description of the Image">  <!-- Your image added here -->
+    </div>
+
+    <script>
+        let timeLeft = 10; // Change this for a different time
+        const timeInterval = setInterval(() => {
+            timeLeft -= 1;
+            document.getElementById('time-left').innerText = timeLeft;
+            if (timeLeft <= 0) {
+                clearInterval(timeInterval);
+                document.getElementById('timer').style.display = 'none';
+                document.getElementById('reaction-gif').style.display = 'none';
+                document.getElementById('link').style.display = 'block';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
